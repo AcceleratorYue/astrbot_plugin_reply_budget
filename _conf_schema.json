@@ -1,0 +1,129 @@
+{
+  "enable": {
+    "description": "启用人类式发言预算",
+    "type": "bool",
+    "default": true
+  },
+  "human_speech_mode": {
+    "description": "启用场景化人类发言策略",
+    "type": "bool",
+    "hint": "开启后按闲谈/被直接对话/任务三种场景注入不同预算；关闭则只保留旧的统一长度预算",
+    "default": true
+  },
+  "enable_in_groups": {
+    "description": "在群聊中启用",
+    "type": "bool",
+    "default": true
+  },
+  "enable_in_private": {
+    "description": "在私聊中启用",
+    "type": "bool",
+    "default": true
+  },
+  "casual_target_chars": {
+    "description": "群聊闲谈目标字数",
+    "type": "int",
+    "hint": "人类日常中位数约 7～8 字；建议 10～15",
+    "default": 12
+  },
+  "casual_max_chars": {
+    "description": "群聊闲谈上限字数",
+    "type": "int",
+    "hint": "超过这个长度通常已不像日常短句；建议 20",
+    "default": 20
+  },
+  "direct_target_chars": {
+    "description": "被直接对话目标字数",
+    "type": "int",
+    "hint": "被 @、私聊、被引用提问时的目标长度；建议 20～30",
+    "default": 20
+  },
+  "direct_max_chars": {
+    "description": "被直接对话上限字数",
+    "type": "int",
+    "hint": "保留回答关键信息的空间；建议 30",
+    "default": 30
+  },
+  "silence_mode": {
+    "description": "沉默策略",
+    "type": "string",
+    "options": ["off", "conditional", "aggressive"],
+    "hint": "conditional=合适时优先沉默；aggressive=没有明确必要就沉默；off=不提示沉默。仅对群聊闲谈生效",
+    "default": "conditional"
+  },
+  "task_keywords": {
+    "description": "任务模式关键词",
+    "type": "list",
+    "items": {
+      "type": "string"
+    },
+    "hint": "命中后允许完整展开，不强行压短",
+    "default": [
+      "详细",
+      "完整",
+      "展开",
+      "解释",
+      "教程",
+      "步骤",
+      "代码",
+      "排查",
+      "分析",
+      "对比",
+      "为什么",
+      "怎么实现",
+      "帮我写",
+      "查一下",
+      "列出",
+      "方案",
+      "原理",
+      "表格"
+    ]
+  },
+  "soft_budget_chars": {
+    "description": "旧版统一预算（仅兼容模式）",
+    "type": "int",
+    "hint": "只有关闭 human_speech_mode 时才使用；默认 60",
+    "default": 60
+  },
+  "prefer_own_view": {
+    "description": "优先说自己的观点",
+    "type": "bool",
+    "hint": "不要逐条接话或只附和对方",
+    "default": true
+  },
+  "use_meme_fallback": {
+    "description": "看不懂时用表情包兜底",
+    "type": "bool",
+    "hint": "遇到歧义、梗或容易说错的内容，优先短反应/表情包而不是硬解释",
+    "default": true
+  },
+  "avoid_word_repetition": {
+    "description": "避免一句话重复用词",
+    "type": "bool",
+    "hint": "提示模型换自然的口语表达，不机械查词典",
+    "default": true
+  },
+  "sarcasm_aware": {
+    "description": "识别反讽与语境反转",
+    "type": "bool",
+    "hint": "极度夸奖可能是阴阳，极度贬低可能是亲近，结合上下文判断",
+    "default": true
+  },
+  "experience_guard": {
+    "description": "不编造真实生活经历",
+    "type": "bool",
+    "hint": "没有经历支撑时卖萌、转移话题或不接，避免空洞强答",
+    "default": true
+  },
+  "knowledge_fallback": {
+    "description": "允许转为知识/判断型回答",
+    "type": "bool",
+    "hint": "用聊天口吻讲知识，不写成课堂讲义",
+    "default": true
+  },
+  "debug_log": {
+    "description": "输出模式判断日志",
+    "type": "bool",
+    "default": false
+  }
+}

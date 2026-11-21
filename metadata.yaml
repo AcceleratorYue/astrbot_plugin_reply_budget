@@ -1,0 +1,20 @@
+name: astrbot_plugin_reply_budget
+display_name: 人类式发言预算
+short_desc: 让日常回复更像真人：短、少附和、可沉默、懂反讽、不硬答
+desc: >-
+  按场景注入人类式发言预算：群聊闲谈默认一句 12 字左右、最多 20 字；
+  被 @/私聊时沿用闲谈规则，默认 20 字左右、最多 30 字，正常提问优先回复，
+  骚扰或无意义请求可以 keep_silent；明确任务才完整展开。
+  只有工具真实存在时才提示 keep_silent 或表情包。只做生成前提示，不修改已生成回复。
+version: 0.6.1
+author: AcceleratorYue
+repo: https://github.com/AcceleratorYue/astrbot_plugin_reply_budget
+social_link: https://github.com/AcceleratorYue
+astrbot_version: ">=4.16,<5"
+support_platforms:
+  - aiocqhttp
+tags:
+  - 人类式发言
+  - 聊天风格
+  - 反讽识别
+  - 自主沉默
